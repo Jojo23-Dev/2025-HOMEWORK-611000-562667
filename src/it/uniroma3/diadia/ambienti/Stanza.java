@@ -77,23 +77,37 @@ public class Stanza {
 	 * @param nomeAttrezzo
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
-	public boolean removeAttrezzo(Attrezzo nomeAttrezzo) {
-	    if (nomeAttrezzo == null) {
-	        return false;
-	    }
-	    for (int i = 0; i < this.numeroAttrezzi; i++) {
-	        if (attrezzi[i] != null && this.attrezzi[i].equals(nomeAttrezzo)) {
-	            // Sposta gli elementi a sinistra per riempire il "buco"
-	            for (int j = i; j < numeroAttrezzi - 1; j++) {
-	                attrezzi[j] = attrezzi[j + 1];
-	            }
-	            this.attrezzi[this.numeroAttrezzi - 1] = null; // Imposta l'ultimo elemento a null
-	            numeroAttrezzi--; // Aggiorna il numero di attrezzi
-	            return true; // Rimosso con successo
-	        }
-	    }
-	    return false; // Attrezzo non trovato
-	}
+    
+	public boolean removeAttrezzo(Attrezzo wanted) {
+			
+			for(int i=0; i<this.numeroAttrezzi; i++) {
+				if(this.attrezzi[i]==wanted) {//cerco l'oggetto per il momento non uso equals
+				    this.attrezzi[i] = this.attrezzi[this.numeroAttrezzi-1];
+				    this.attrezzi[this.numeroAttrezzi-1] = null;
+				    this.numeroAttrezzi--;
+					return true;
+				}
+			}
+			
+			return false;
+		}
+//	public boolean removeAttrezzo(Attrezzo nomeAttrezzo) {
+//	    if (nomeAttrezzo == null) {
+//	        return false;
+//	    }
+//	    for (int i = 0; i < this.numeroAttrezzi; i++) {
+//	        if (attrezzi[i] != null && this.attrezzi[i].equals(nomeAttrezzo)) {
+//	            // Sposta gli elementi a sinistra per riempire il "buco"
+//	            for (int j = i; j < numeroAttrezzi - 1; j++) {
+//	                attrezzi[j] = attrezzi[j + 1];
+//	            }
+//	            this.attrezzi[this.numeroAttrezzi - 1] = null; // Imposta l'ultimo elemento a null
+//	            numeroAttrezzi--; // Aggiorna il numero di attrezzi
+//	            return true; // Rimosso con successo
+//	        }
+//	    }
+//	    return false; // Attrezzo non trovato
+//	}
     
     /**
 	* Controlla se un attrezzo esiste nella stanza (uguaglianza sul nome).
