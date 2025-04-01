@@ -120,7 +120,7 @@ public class DiaDia {
 	private void prendi(String nomeAttrezzo) {
 
 		if(nomeAttrezzo == null) {
-			System.out.println("Che attrezzo vuoi prendere?");
+			System.out.println("Quale attrezzo vuoi prendere?");
 			
 		}
 		else {
