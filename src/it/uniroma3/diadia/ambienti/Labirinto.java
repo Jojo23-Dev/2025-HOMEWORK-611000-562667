@@ -46,11 +46,11 @@ public class Labirinto {
 		/* crea gli attrezzi */
     	Attrezzo lanterna = new Attrezzo("lanterna",3);
 		Attrezzo osso = new Attrezzo("osso",1);
-		Attrezzo pizza = new Attrezzo("pizza",2);
+
 	    /* pone gli attrezzi nelle stanze */
 		aulaN10.addAttrezzo(lanterna);
 		atrio.addAttrezzo(osso);
-		atrio.addAttrezzo(pizza);
+		
 	}
 	public  void setStanzaFinale(Stanza stanzaFinale) {
 		this.stanzaFinale = stanzaFinale;

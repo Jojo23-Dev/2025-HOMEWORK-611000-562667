@@ -190,6 +190,7 @@ public class DiaDia {
 	}
 
 	public static void main(String[] argc) {
+		
 		DiaDia gioco = new DiaDia();
 		//ioconsole =new IOConsole();
 		gioco.gioca();
