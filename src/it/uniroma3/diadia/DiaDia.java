@@ -126,7 +126,7 @@ public class DiaDia {
 		else {
 			Attrezzo attrezzo=this.partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
 			if(attrezzo!=null ){
-				if(this.partita.getGiocatore().getBorsa().addAttrezzo(attrezzo))
+				this.partita.getGiocatore().getBorsa().addAttrezzo(attrezzo);
 					
 					ioconsole.mostraMessaggio("Hai preso l'attrezzo ->"+this.partita.getGiocatore().getBorsa().getAttrezzo(nomeAttrezzo));
 					this.partita.getStanzaCorrente().removeAttrezzo(attrezzo);
