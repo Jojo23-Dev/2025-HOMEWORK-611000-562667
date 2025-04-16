@@ -24,7 +24,7 @@ public class ComandoNonValido implements Comando{
 	}
 
 	@Override
-	public void comand(Partita par) {
+	public void esegui(Partita par) {
 		// TODO Auto-generated method stub
 		IOConsole ioconsole=new IOConsole();
 		ioconsole.mostraMessaggio("Comando sconosciuto");

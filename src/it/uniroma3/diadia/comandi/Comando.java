@@ -45,6 +45,6 @@ public interface Comando {
 	public String getNome();
 	public String getParametro();
 	public void setParametro(String parametro);
-	public void comand(Partita c);
+	public void esegui(Partita c);
 
 }

@@ -18,7 +18,7 @@ public class ComandoPosa implements Comando{
 		return null;
 	}
 	@Override
-	public void comand(Partita partita) {
+	public void esegui(Partita partita) {
 		if(nomeAttrezzo == null) {
 			ioconsole.mostraMessaggio("Quale attrezzo vuoi posare?");
 			ioconsole.mostraMessaggio(partita.getGiocatore().getBorsa().toString());

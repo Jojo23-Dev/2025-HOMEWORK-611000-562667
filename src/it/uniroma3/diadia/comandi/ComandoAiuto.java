@@ -4,7 +4,7 @@ public class ComandoAiuto implements Comando{
 	static final private String[] elencoComandi = {"vai", "aiuto", "fine","prendi","posa"};
 	IOConsole ioconsole=new IOConsole();
 	@Override
-	public void comand(Partita partita) {
+	public void esegui(Partita partita) {
 	for(int i=0; i< elencoComandi.length; i++) 
 		ioconsole.mostraMessaggio(elencoComandi[i]+" ");
 	ioconsole.mostraMessaggio(" ");

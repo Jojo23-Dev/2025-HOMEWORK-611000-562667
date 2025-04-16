@@ -80,6 +80,13 @@ public class Partita {
 		return this.getStanzaCorrente()+"\nCfu= "+this.giocatore.getCfu();
 	}
 
+	public boolean giocatoreIsVivo() {
+		// TODO Auto-generated method stub
+		if(this.giocatore.getCfu()>0)
+			return true;
+		return false;
+	}
+
 
 	
 

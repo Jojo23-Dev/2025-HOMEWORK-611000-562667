@@ -9,7 +9,7 @@ public class ComandoPrendi implements Comando{
 	IOConsole ioconsole=new IOConsole();
 	private String nomeAttrezzo;
 	@Override
-	public void comand(Partita partita) {
+	public void esegui(Partita partita) {
 
 		if(nomeAttrezzo == null) {
 			System.out.println("Quale attrezzo vuoi prendere?");

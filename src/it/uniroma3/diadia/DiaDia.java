@@ -3,9 +3,10 @@ package it.uniroma3.diadia;
 
 //import java.util.Scanner;
 
-import it.uniroma3.diadia.ambienti.Stanza;
-import it.uniroma3.diadia.attrezzi.Attrezzo;
+//import it.uniroma3.diadia.ambienti.Stanza;
+//import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.Comando;
+import it.uniroma3.diadia.comandi.FabbricaDiComandi;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 
@@ -36,10 +37,10 @@ public class DiaDia {
 //	static final private String[] elencoComandi = {"vai", "aiuto", "fine","prendi","posa"};
 
 	private Partita partita;
-	private IOConsole ioconsole;
+	private IO ioconsole;
 
-	public DiaDia() {
-		this.ioconsole=new IOConsole();
+	public DiaDia(IO io) {
+		this.ioconsole=io;
 		this.partita = new Partita();
 	}
 
@@ -47,7 +48,7 @@ public class DiaDia {
 		String istruzione; 
 
 
-		ioconsole.mostraMessaggio(MESSAGGIO_BENVENUTO);
+		this.ioconsole.mostraMessaggio(MESSAGGIO_BENVENUTO);
 				
 		do		
 			istruzione = ioconsole.leggiRiga();
@@ -61,9 +62,18 @@ public class DiaDia {
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
 	 */
 	private boolean processaIstruzione(String istruzione) {
-		FabbricaDiComandiFisarmonica fatt=new FabbricaDiComandiFisarmonica();
-		Comando comandoDaEseguire =  fatt.comandi(istruzione);
-		comandoDaEseguire.comand(this.partita);
+		Comando comandoDaEseguire;
+		FabbricaDiComandi factory = new FabbricaDiComandiFisarmonica();
+		comandoDaEseguire = factory.costruisciComando(istruzione);
+		comandoDaEseguire.esegui(this.partita);
+		if (this.partita.vinta())
+
+		System.out.println("Hai vinto!");
+		if (!this.partita.giocatoreIsVivo())
+
+		System.out.println("Hai esaurito i CFU...");
+
+		return this.partita.isFinita();
 //		if(comandoDaEseguire.getNome()==null)
 //			return false;
 //		if (comandoDaEseguire.getNome().equals("fine") ) {
@@ -80,17 +90,7 @@ public class DiaDia {
 //			this.posa(comandoDaEseguire.getParametro());
 //		else
 //			ioconsole.mostraMessaggio("Comando sconosciuto");
-		if (this.partita.isFinita()) {
-			{
-				if(this.partita.vinta())
-					ioconsole.mostraMessaggio("Hai vinto!");
-				else if(this.partita.getGiocatore().getCfu()==0)
-					ioconsole.mostraMessaggio("Hai perso!");
-				
-			}
-				return true;
-			}
-		return false;
+
 		
 	} 
 	//metodo posa attrezzo
@@ -190,8 +190,8 @@ public class DiaDia {
 //	}
 
 	public static void main(String[] argc) {
-		
-		DiaDia gioco = new DiaDia();
+		IO io=new IOConsole();
+		DiaDia gioco = new DiaDia(io);
 		//ioconsole =new IOConsole();
 		gioco.gioca();
 	}

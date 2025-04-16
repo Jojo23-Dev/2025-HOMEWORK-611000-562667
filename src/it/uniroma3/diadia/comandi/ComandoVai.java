@@ -9,28 +9,32 @@ public class ComandoVai implements Comando {
 
 	private String direzione;
 	@Override
-	public void comand(Partita partita) {
-		if(direzione==null)
-			ioconsole.mostraMessaggio("Dove vuoi andare ?");
-		
+	public void esegui(Partita partita) {
+		Stanza stanzaCorrente=partita.getStanzaCorrente();
 		Stanza prossimaStanza = null;
+		if(this.direzione==null) {
+			ioconsole.mostraMessaggio("Dove vuoi andare ? "
+					+ "Devi specificare una direzione");
+		return;}
+		prossimaStanza = stanzaCorrente.getStanzaAdiacente(direzione);
 		
-		prossimaStanza = partita.getStanzaCorrente().getStanzaAdiacente(direzione);
-		
-		if (prossimaStanza == null)
+		if (prossimaStanza == null) {
 			
 			ioconsole.mostraMessaggio("Direzione inesistente");
+			return;}
 		
 		else {
-			
-				int cfu =partita.getGiocatore().getCfu();
-				// parametro set modificato : cfu-- -> --cfu
-				partita.getGiocatore().setCfu(--cfu);
-//				// aggiunto stampa del cfu che si abbassa
-//				System.out.println("Il tuo CFU si abbassa -> "+ this.partita.getGiocatore().getCfu());
-//			
-				// istruzione che permette di proseguire nella prossima stanza	
-				partita.setStanzaCorrente(prossimaStanza);
+			partita.setStanzaCorrente(prossimaStanza);
+			System.out.println(partita.getStanzaCorrente().getNome());
+			partita.getGiocatore().setCfu(partita.getGiocatore().getCfu()-1);
+//				int cfu =partita.getGiocatore().getCfu();
+//				// parametro set modificato : cfu-- -> --cfu
+//				partita.getGiocatore().setCfu(--cfu);
+////				// aggiunto stampa del cfu che si abbassa
+////				System.out.println("Il tuo CFU si abbassa -> "+ this.partita.getGiocatore().getCfu());
+////			
+//				// istruzione che permette di proseguire nella prossima stanza	
+//				partita.setStanzaCorrente(prossimaStanza);
 		}
 		
 		ioconsole.mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
