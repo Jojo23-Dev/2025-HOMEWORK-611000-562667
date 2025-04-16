@@ -20,10 +20,10 @@ public class StanzaBloccata extends Stanza {
 	public String getDescrizione() {
 		String desc=new String();
 		if(!this.hasAttrezzo(nomeAttrezzoSbloccataDirezione)) {
-			desc="La stanza è bloccata nella direzione ->"+this.nomeDirezioneBloccata+"/nPrendi l'attrezzo per sbloccare la stanza"+this.nomeAttrezzoSbloccataDirezione;
+			desc="La stanza è bloccata nella direzione ->"+this.nomeDirezioneBloccata+"\nPrendi l'attrezzo per sbloccare la stanza->"+this.nomeAttrezzoSbloccataDirezione;
 			return desc;
 		}
-		return this.getDescrizione();
+		return super.getDescrizione();
 	}
 }
 
