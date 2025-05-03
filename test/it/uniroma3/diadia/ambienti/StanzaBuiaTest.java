@@ -26,8 +26,12 @@ class StanzaBuiaTest {
 	}
 	@Test
 	void testgetDescrizioneBuia() {
-		
 		assertNotEquals(buia.toString(),buia.getDescrizione());
 	}
-
+	@Test
+	void testgetDescrizioneNotNull() {
+		assertNotNull(buia.getDescrizione());
+	}
+	
+	
 }

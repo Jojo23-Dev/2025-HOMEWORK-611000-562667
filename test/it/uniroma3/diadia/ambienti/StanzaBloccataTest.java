@@ -39,12 +39,15 @@ class StanzaBloccataTest {
 	//Test metodo getDescrizione
 	@Test
 	void testgetDescrizione() {
-		
 		bloccata.addAttrezzo(at);	
 		assertEquals(bloccata.toString(),bloccata.getDescrizione());
 	}
 	@Test
 	void testgetDescrizioneNotEquals() {
 		assertNotEquals(bloccata.toString(),bloccata.getDescrizione());
+	}
+	@Test
+	void testgetDescrizioneNotNull() {
+		assertNotNull(bloccata.getDescrizione());
 	}
 }

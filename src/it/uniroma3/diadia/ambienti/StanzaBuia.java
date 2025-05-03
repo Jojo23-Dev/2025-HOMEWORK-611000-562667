@@ -1,7 +1,6 @@
 package it.uniroma3.diadia.ambienti;
 
-public class StanzaBuia extends Stanza
-{
+public class StanzaBuia extends Stanza{
 	private String descrizione;
 	public StanzaBuia(String nome,String nomeAttrezzo) {
 		super(nome);
@@ -16,4 +15,5 @@ public class StanzaBuia extends Stanza
 			return des;
 		return super.getDescrizione();
 	
-}}
+	}
+}

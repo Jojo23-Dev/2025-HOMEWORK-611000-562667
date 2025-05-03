@@ -19,7 +19,6 @@ class ComandoPosaTest {
 	// test metodo t
 	@Test
 	void testSetNull() {
-
 		assertEquals(null,cp.getParametro());
 	}
 
