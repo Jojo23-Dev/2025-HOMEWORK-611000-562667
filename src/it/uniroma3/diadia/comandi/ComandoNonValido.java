@@ -27,7 +27,7 @@ public class ComandoNonValido implements Comando{
 	public void esegui(Partita par) {
 		// TODO Auto-generated method stub
 		IOConsole ioconsole=new IOConsole();
-		ioconsole.mostraMessaggio("Comando sconosciuto");
+		ioconsole.mostraMessaggio("Comando non valido");
 	}
 
 }

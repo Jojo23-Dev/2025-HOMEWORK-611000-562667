@@ -16,7 +16,8 @@ public class ComandoFine implements Comando{
 	}
 	@Override 
 	public void esegui(Partita par) {
-		ioconsole.mostraMessaggio("Grazie per aver giocato !!");  // si desidera smettere
+		if(par.isFinita())
+			ioconsole.mostraMessaggio("Grazie per aver giocato !!");  // si desidera smettere
 	}
 
 	@Override
