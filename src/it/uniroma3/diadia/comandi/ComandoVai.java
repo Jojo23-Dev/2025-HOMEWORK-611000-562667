@@ -15,15 +15,15 @@ public class ComandoVai implements Comando {
 		if(this.direzione==null) {
 			ioconsole.mostraMessaggio("Dove vuoi andare ? "
 					+ "Devi specificare una direzione");
-		return;}
+		return;
+		}
 		prossimaStanza = stanzaCorrente.getStanzaAdiacente(direzione);
 		
 		if (prossimaStanza == null) {
 			
 			ioconsole.mostraMessaggio("Direzione inesistente");
-			return;}
-		
-		else {
+			return;
+			}
 			partita.setStanzaCorrente(prossimaStanza);
 			System.out.println(partita.getStanzaCorrente().getNome());
 			partita.getGiocatore().setCfu(partita.getGiocatore().getCfu()-1);
@@ -35,9 +35,9 @@ public class ComandoVai implements Comando {
 ////			
 //				// istruzione che permette di proseguire nella prossima stanza	
 //				partita.setStanzaCorrente(prossimaStanza);
-		}
 		
-		ioconsole.mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
+		
+		
 	}
 
 	@Override
