@@ -44,7 +44,7 @@ public class DiaDia {
 		this.partita = new Partita();
 	}
 
-	public void gioca() {
+	public void gioca() throws Exception {
 		String istruzione; 
 
 
@@ -60,8 +60,9 @@ public class DiaDia {
 	 * Processa una istruzione 
 	 *
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
+	 * @throws Exception 
 	 */
-	private boolean processaIstruzione(String istruzione) {
+	private boolean processaIstruzione(String istruzione) throws Exception {
 		Comando comandoDaEseguire;
 		FabbricaDiComandi factory = new FabbricaDiComandiFisarmonica();
 		comandoDaEseguire = factory.costruisciComando(istruzione);
@@ -183,13 +184,14 @@ public class DiaDia {
 
 	/**
 	 * Comando "Fine".
+	 * @throws Exception 
 	 */
 //	private void fine() {
 //		
 //		ioconsole.mostraMessaggio("Grazie di aver giocato!");  // si desidera smettere
 //	}
 
-	public static void main(String[] argc) {
+	public static void main(String[] argc) throws Exception {
 		IO io=new IOConsole();
 		DiaDia gioco = new DiaDia(io);
 		//ioconsole =new IOConsole();

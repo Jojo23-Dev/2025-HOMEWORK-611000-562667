@@ -25,14 +25,14 @@ class IOSimulatorTest {
 
 		factory = new FabbricaDiComandiFisarmonica();
 	}
-	private boolean Istruzioni(String ist) {
+	private boolean Istruzioni(String ist) throws Exception  {
 		Comando comand;
 		comand=this.factory.costruisciComando(ist);
 		comand.esegui(this.par);
 		return this.par.isFinita();
 	}
 	@Test
-	void testPartita() {
+	void testPartita() throws Exception {
 		for(String is:elencoComandi) {
 			this.iosim.mostraMessaggio(is);
 			stringa=this.iosim.leggiRiga();

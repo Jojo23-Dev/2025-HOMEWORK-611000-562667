@@ -22,6 +22,7 @@ public class ComandoVai implements Comando {
 		if (prossimaStanza == null) {
 			
 			ioconsole.mostraMessaggio("Direzione inesistente");
+			
 			return;
 			}
 			partita.setStanzaCorrente(prossimaStanza);

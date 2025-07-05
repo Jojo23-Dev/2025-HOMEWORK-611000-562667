@@ -18,8 +18,7 @@ public class ComandoPrendi implements Comando{
 		else {
 			Attrezzo attrezzo=partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
 			if(attrezzo!=null ){
-				partita.getGiocatore().getBorsa().addAttrezzo(attrezzo);
-					
+					partita.getGiocatore().getBorsa().addAttrezzo(attrezzo);
 					ioconsole.mostraMessaggio("Hai preso l'attrezzo ->"+partita.getGiocatore().getBorsa().getAttrezzo(nomeAttrezzo));
 					partita.getStanzaCorrente().removeAttrezzo(attrezzo);
 			

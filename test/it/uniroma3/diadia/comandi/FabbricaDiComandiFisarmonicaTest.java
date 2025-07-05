@@ -14,39 +14,39 @@ class FabbricaDiComandiFisarmonicaTest {
 	}
 	
 	@Test
-	void testComandoVai() {
+	void testComandoVai() throws Exception {
 		c=new ComandoVai();
 		assertEquals(c.getNome(),fdcf.costruisciComando("vai").getNome());
 	}
 	
 	@Test
-	void testComandoNonValido() {
+	void testComandoNonValido() throws Exception {
 		c=new ComandoNonValido();
 		assertEquals(c.getNome(),fdcf.costruisciComando("scarica").getNome());
 	}
 	
 	@Test
-	void testComandoAiuto() {
+	void testComandoAiuto() throws Exception {
 		c=new ComandoAiuto();
 		assertEquals(c.getNome(),fdcf.costruisciComando("aiuto").getNome());
 	}
 	@Test
-	void testComandoFine() {
+	void testComandoFine() throws Exception {
 		c=new ComandoFine();
 		assertEquals(c.getNome(),fdcf.costruisciComando("fine").getNome());
 	}
 	@Test
-	void testComandoGuarda() {
+	void testComandoGuarda() throws Exception {
 		c=new ComandoGuarda();
 		assertEquals(c.getNome(),fdcf.costruisciComando("guarda").getNome());
 	}
 	@Test
-	void testComandoPosa() {
+	void testComandoPosa() throws Exception {
 		c=new ComandoPosa();
 		assertEquals(c.getNome(),fdcf.costruisciComando("posa").getNome());
 	}
 	@Test
-	void testComandoPrendi() {
+	void testComandoPrendi() throws Exception {
 		c=new ComandoPrendi();
 		assertEquals(c.getNome(),fdcf.costruisciComando("prendi").getNome());
 	}
